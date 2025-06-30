@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavya Pandya - Biochemist & Cancer Biology Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+                    },
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#64748b',
+                        'accent': '#0ea5e9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .skill-tag {
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-gray-900">Kavya Pandya</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-gray-600 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#research" class="text-gray-600 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Research</a>
+                        <a href="#publications" class="text-gray-600 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Publications</a>
+                        <a href="#experience" class="text-gray-600 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#contact" class="text-gray-600 hover:text-primary transition-colors px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 gradient-bg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1 text-white fade-in">
+                    <h1 class="text-4xl lg:text-6xl font-bold mb-6">
+                        Dr. Kavya Pandya
+                    </h1>
+                    <h2 class="text-xl lg:text-2xl font-light mb-4 text-blue-100">
+                        PhD in Oncology & Cancer Biology
+                    </h2>
+                    <p class="text-lg mb-8 text-blue-50 max-w-2xl">
+                        Specializing in DNA Damage Response, Autophagy, and CRISPR-Cas Systems. 
+                        Passionate about translating fundamental research into therapeutic applications.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://scholar.google.com/citations?user=cR6thnUAAAAJ&hl=en" 
+                           class="inline-flex items-center px-6 py-3 bg-white text-primary font-medium rounded-lg hover:bg-blue-50 transition-colors">
+                            <i class="fas fa-graduation-cap mr-2"></i>
+                            Google Scholar
+                        </a>
+                        <a href="https://www.linkedin.com/in/kavya-pandya-23998118b/" 
+                           class="inline-flex items-center px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            LinkedIn
+                        </a>
+                        <a href="cv.pdf" 
+                           class="inline-flex items-center px-6 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-primary transition-colors">
+                            <i class="fas fa-download mr-2"></i>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-shrink-0">
+                    <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-white/20 backdrop-blur-sm border-4 border-white/30 flex items-center justify-center">
+                        <img src="profile.jpg" alt="Kavya Pandya" class="w-56 h-56 lg:w-72 lg:h-72 rounded-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-gray-600 mb-6">
+                        I am a PhD graduate in Oncology and Cancer Biology from the Institute of Advanced Research, Gandhinagar. 
+                        My research focuses on understanding the intricate molecular mechanisms of DNA damage response (DDR) and 
+                        autophagy pathways, particularly their cross-talk in cellular stress responses.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        With expertise in computational biology, molecular techniques, and cell-based assays, I am passionate 
+                        about bridging the gap between fundamental research and clinical applications. My work on CRISPR-Cas 
+                        systems and protein-protein interactions contributes to advancing precision medicine approaches.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        I am actively seeking opportunities in research and development roles where I can contribute to 
+                        innovative therapeutic development and drug discovery programs.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl card-hover">
+                        <div class="text-3xl font-bold text-primary mb-2">5+</div>
+                        <div class="text-gray-600">Years Research</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl card-hover">
+                        <div class="text-3xl font-bold text-green-600 mb-2">6</div>
+                        <div class="text-gray-600">Publications</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-6 rounded-xl card-hover">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">14</div>
+                        <div class="text-gray-600">Citations</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl card-hover">
+                        <div class="text-3xl font-bold text-orange-600 mb-2">10+</div>
+                        <div class="text-gray-600">Skills</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Skills Section -->
+    <section id="research" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Research & Expertise</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Research Interests -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="fas fa-microscope text-primary mr-3"></i>
+                        Research Interests
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">DNA Damage Response (DDR)</h4>
+                                <p class="text-gray-600 text-sm">Investigating MDC1 and its role in cellular stress responses</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Autophagy Mechanisms</h4>
+                                <p class="text-gray-600 text-sm">Cross-talk between DDR and autophagy pathways</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">CRISPR-Cas Systems</h4>
+                                <p class="text-gray-600 text-sm">Programmable nucleases for molecular diagnostics</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Cancer Biology</h4>
+                                <p class="text-gray-600 text-sm">Molecular targets for therapeutic intervention</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="fas fa-cogs text-primary mr-3"></i>
+                        Technical Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Molecular Cloning</span>
+                        <span class="skill-tag px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Western Blotting</span>
+                        <span class="skill-tag px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">PCR & qRT-PCR</span>
+                        <span class="skill-tag px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Flow Cytometry</span>
+                        <span class="skill-tag px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm font-medium">Cell Culture</span>
+                        <span class="skill-tag px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Immunocytochemistry</span>
+                        <span class="skill-tag px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Molecular Dynamics</span>
+                        <span class="skill-tag px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">SDS-PAGE</span>
+                        <span class="skill-tag px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Cell-Based Assays</span>
+                        <span class="skill-tag px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm font-medium">Bioinformatics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Publications</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+                <p class="text-gray-600 mt-4">Recent research contributions in molecular biology and cancer research</p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Publication 1 -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-primary card-hover">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        CRISPR-Cas systems: programmable nuclease revolutionizing the molecular diagnosis
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        <strong>K Pandya</strong>, D Jagani, N Singh
+                    </p>
+                    <p class="text-sm text-gray-500 mb-2">
+                        <em>Molecular Biotechnology</em> 66 (8), 1739-1753 (2024)
+                    </p>
+                    <div class="flex items-center gap-4 text-sm">
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full">12 Citations</span>
+                        <span class="text-gray-500">2024</span>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border-l-4 border-purple-500 card-hover">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        In silico study reveals unconventional interactions between MDC1 of DDR and Beclin-1 of autophagy
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        <strong>K Pandya</strong>, N Singh
+                    </p>
+                    <p class="text-sm text-gray-500 mb-2">
+                        <em>Molecular Diversity</em> 27 (6), 2789-2802 (2023)
+                    </p>
+                    <div class="flex items-center gap-4 text-sm">
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full">2 Citations</span>
+                        <span class="text-gray-500">2023</span>
+                    </div>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border-l-4 border-green-500 card-hover">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        A Turn off Fluorescent Ionic Liquid with Carbazole Fluorophore for Sensing Fe2+ ions
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        S Vyas, <strong>K Pandya</strong>, N Singh, R Mishra
+                    </p>
+                    <p class="text-sm text-gray-500 mb-2">
+                        <em>Journal of Molecular Structure</em>, 142732 (2025)
+                    </p>
+                    <div class="flex items-center gap-4 text-sm">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full">New</span>
+                        <span class="text-gray-500">2025</span>
+                    </div>
+                </div>
+
+                <!-- Publication 4 -->
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-l-4 border-orange-500 card-hover">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        Decoding the DDR and Autophagy cross talk, a cellular response to genotoxic stress and its implications in cancer therapy
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        N Singh, <strong>K Pandya</strong>
+                    </p>
+                    <p class="text-sm text-gray-500 mb-2">
+                        <em>Journal of Biological Chemistry</em> 301 (5) (2025)
+                    </p>
+                    <div class="flex items-center gap-4 text-sm">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Abstract</span>
+                        <span class="text-gray-500">2025</span>
+                    </div>
+                </div>
+
+                <!-- Publication 5 -->
+                <div class="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-xl border-l-4 border-cyan-500 card-hover">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        Unraveling the molecular interactions between DDR and autophagy in response to oxidative stress
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        <strong>KA Pandya</strong>, N Singh
+                    </p>
+                    <p class="text-sm text-gray-500 mb-2">
+                        <em>Cancer Research</em> 85 (8_Supplement_1), 4198-4198 (2025)
+                    </p>
+                    <div class="flex items-center gap-4 text-sm">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Conference</span>
+                        <span class="text-gray-500">2025</span>
+                    </div>
+                </div>
+
+                <!-- Publication 6 -->
+                <div class="bg-gradient-to-r from-teal-50 to-green-50 p-6 rounded-xl border-l-4 border-teal-500 card-hover">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        Applications and associated challenges of CRISPR-Cas technology in agriculture
+                    </h3>
+                    <p class="text-gray-600 mb-2">
+                        S Rathore, R Bhatt, S Joshi, <strong>K Pandya</strong>, N Singh
+                    </p>
+                    <p class="text-sm text-gray-500 mb-2">
+                        <em>CRISPR-Cas System in Translational Biotechnology</em>, 265-280 (2024)
+                    </p>
+                    <div class="flex items-center gap-4 text-sm">
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Book Chapter</span>
+                        <span class="text-gray-500">2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Experience & Education</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="fas fa-briefcase text-primary mr-3"></i>
+                        Professional Experience
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Doctoral Researcher -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-start justify-between mb-3">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900">Doctoral Researcher</h4>
+                                    <p class="text-primary font-medium">Institute of Advanced Research</p>
+                                </div>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2020-2025</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                <strong>Project:</strong> Investigate The Interplay Between MDC1 And Beclin-1 In Oxidative Stress And Drug Induced DNA Damage
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Conducted in silico protein-protein interaction analysis using molecular docking and dynamics simulation</li>
+                                <li>• Studied molecular cross-talk between DDR and autophagy-related proteins</li>
+                                <li>• Analyzed cytotoxic effects of DNA-damaging agents on MDC1-knockdown cell lines</li>
+                            </ul>
+                        </div>
+
+                        <!-- Junior Research Fellow -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-start justify-between mb-3">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900">Junior Research Fellow</h4>
+                                    <p class="text-primary font-medium">Gujarat Biotechnology Research Centre</p>
+                                </div>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Aug-Nov 2020</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                <strong>Project:</strong> Global Challenge Research Fund - One Health Poultry Hub
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Isolated and characterized bacterial strains from poultry samples</li>
+                                <li>• Used biochemical assays and molecular techniques (PCR, 16S rRNA sequencing)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Summer Intern -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-start justify-between mb-3">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900">Summer Intern</h4>
+                                    <p class="text-primary font-medium">Amneal Pharmaceuticals</p>
+                                </div>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2017</span>
+                            </div>
+                            <p class="text-sm text-gray-600">
+                                Gained hands-on experience in sterility testing and microbial contamination analysis in drug manufacturing processes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap text-primary mr-3"></i>
+                        Education
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- PhD -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-start justify-between mb-3">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900">Ph.D. in Oncology & Cancer Biology</h4>
+                                    <p class="text-primary font-medium">Institute of Advanced Research, Gandhinagar</p>
+                                </div>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2020-2025</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">
+                                Dissertation on DDR-Autophagy cross-talk in cellular stress responses
+                            </p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Molecular Biology</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Cell Culture</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Bioinformatics</span>
+                            </div>
+                        </div>
+
+                        <!-- Master's -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-start justify-between mb-3">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900">M.Sc. in Biochemistry</h4>
+                                    <p class="text-primary font-medium">Nirma University</p>
+                                </div>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2018-2020</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">
+                                Dissertation: Identification and cloning of novel Rab9 homologue in Entamoeba histolytica
+                            </p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Molecular Cloning</span>
+                                <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">PCR</span>
+                                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded">Parasite Culture</span>
+                            </div>
+                        </div>
+
+                        <!-- Bachelor's -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="flex items-start justify-between mb-3">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900">B.Sc. in Biochemistry</h4>
+                                    <p class="text-primary font-medium">St. Xavier's College, Ahmedabad</p>
+                                </div>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2015-2018</span>
+                            </div>
+                            <p class="text-sm text-gray-600">
+                                Foundation in biochemistry, molecular biology, and analytical techniques
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    I'm actively seeking opportunities in research and development. Let's connect to discuss potential collaborations or positions.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl card-hover">
+                    <i class="fas fa-envelope text-3xl text-primary mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                    <a href="mailto:kavya.pandya@example.com" class="text-primary hover:text-blue-700">kavya.pandya@example.com</a>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl card-hover">
+                    <i class="fab fa-linkedin text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/kavya-pandya-23998118b/" class="text-green-600 hover:text-green-700">Connect with me</a>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-6 rounded-xl card-hover">
+                    <i class="fas fa-graduation-cap text-3xl text-purple-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Google Scholar</h3>
+                    <a href="https://scholar.google.com/citations?user=cR6thnUAAAAJ&hl=en" class="text-purple-600 hover:text-purple-700">View Publications</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2024 Kavya Pandya. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://scholar.google.com/citations?user=cR6thnUAAAAJ&hl=en" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kavya-pandya-23998118b/" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
