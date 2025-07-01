@@ -25,7 +25,28 @@
     </script>
     <style>
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: 
+                linear-gradient(135deg, rgba(52, 152, 219, 0.85) 0%, rgba(22, 160, 133, 0.85) 100%);
+            position: relative;
+        }
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.05) 3px, transparent 3px),
+                radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.05) 3px, transparent 3px),
+                linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.03) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.03) 50%, transparent 52%);
+            background-size: 100px 100px, 120px 120px, 80px 80px, 90px 90px, 60px 60px, 60px 60px;
+            background-position: 0 0, 50px 50px, 20px 20px, 70px 70px, 0 0, 30px 30px;
+            opacity: 0.6;
+            pointer-events: none;
         }
         .card-hover {
             transition: all 0.3s ease;
@@ -76,7 +97,7 @@
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="flex-1 text-white fade-in">
                     <h1 class="text-4xl lg:text-6xl font-bold mb-6">
-                        Dr. Kavya Pandya
+                        Kavya Pandya
                     </h1>
                     <h2 class="text-xl lg:text-2xl font-light mb-4 text-blue-100">
                         PhD in Oncology & Cancer Biology
@@ -122,18 +143,22 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <p class="text-lg text-gray-600 mb-6">
-                        I am a PhD graduate in Oncology and Cancer Biology from the Institute of Advanced Research, Gandhinagar. 
-                        My research focuses on understanding the intricate molecular mechanisms of DNA damage response (DDR) and 
-                        autophagy pathways, particularly their cross-talk in cellular stress responses.
+                        Hello! I'm a passionate and curious researcher with a PhD focused on understanding cellular responses to stress, 
+                        particularly the intricate mechanisms of the DNA damage response and autophagy pathways. My doctoral studies 
+                        specifically highlighted how proteins like MDC1 interact with autophagy-related components to play a 
+                        non-canonical role in DNA repair.
                     </p>
                     <p class="text-lg text-gray-600 mb-6">
-                        With expertise in computational biology, molecular techniques, and cell-based assays, I am passionate 
-                        about bridging the gap between fundamental research and clinical applications. My work on CRISPR-Cas 
-                        systems and protein-protein interactions contributes to advancing precision medicine approaches.
+                        My fascination extends to the broader interplay between various cellular pathways and their intricate regulation. 
+                        I'm especially intrigued by how fundamental mechanisms, such as DNA repair, contribute to cellular homeostasis 
+                        and how their dysregulation can lead to significant pathologies, including cancer. This interest drives my 
+                        commitment to exploring these complex processes and their implications for human health.
                     </p>
                     <p class="text-lg text-gray-600">
-                        I am actively seeking opportunities in research and development roles where I can contribute to 
-                        innovative therapeutic development and drug discovery programs.
+                        I bring extensive hands-on experience in a variety of advanced laboratory techniques, including western blotting, 
+                        immunocytochemistry, co-immunoprecipitation studies, flow cytometry, apoptosis detection, and diverse cell-based 
+                        assays. I am dedicated to scientific discovery, thrive in collaborative environments, and am always eager to 
+                        apply and upgrade my skills to challenging research questions aimed at making a tangible impact.
                     </p>
                 </div>
                 <div class="grid grid-cols-2 gap-6">
@@ -241,7 +266,9 @@
                 <!-- Publication 1 -->
                 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-primary card-hover">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                        CRISPR-Cas systems: programmable nuclease revolutionizing the molecular diagnosis
+                        <a href="https://link.springer.com/article/10.1007/s12033-023-00819-7" target="_blank" class="text-gray-900 hover:text-primary transition-colors">
+                            CRISPR-Cas systems: programmable nuclease revolutionizing the molecular diagnosis
+                        </a>
                     </h3>
                     <p class="text-gray-600 mb-2">
                         <strong>K Pandya</strong>, D Jagani, N Singh
@@ -258,7 +285,9 @@
                 <!-- Publication 2 -->
                 <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border-l-4 border-purple-500 card-hover">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                        In silico study reveals unconventional interactions between MDC1 of DDR and Beclin-1 of autophagy
+                        <a href="https://link.springer.com/article/10.1007/s11030-022-10579-2" target="_blank" class="text-gray-900 hover:text-primary transition-colors">
+                            In silico study reveals unconventional interactions between MDC1 of DDR and Beclin-1 of autophagy
+                        </a>
                     </h3>
                     <p class="text-gray-600 mb-2">
                         <strong>K Pandya</strong>, N Singh
@@ -326,7 +355,9 @@
                 <!-- Publication 6 -->
                 <div class="bg-gradient-to-r from-teal-50 to-green-50 p-6 rounded-xl border-l-4 border-teal-500 card-hover">
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                        Applications and associated challenges of CRISPR-Cas technology in agriculture
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/B9780323918084000080" target="_blank" class="text-gray-900 hover:text-primary transition-colors">
+                            Applications and associated challenges of CRISPR-Cas technology in agriculture
+                        </a>
                     </h3>
                     <p class="text-gray-600 mb-2">
                         S Rathore, R Bhatt, S Joshi, <strong>K Pandya</strong>, N Singh
