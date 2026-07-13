@@ -25,9 +25,9 @@ npm run build    # static export -> ./out
 
 ## Deployment
 
-Push to `main`. The workflow in `.github/workflows/deploy.yml` builds and force-pushes
-`out/` to the **`gh-pages`** branch. One-time setup in **Settings → Pages**: set
-*Source = Deploy from a branch → `gh-pages` / (root)*.
+Push to `main`. The workflow in `.github/workflows/deploy.yml` builds the static export
+and deploys it with the official GitHub Pages Actions. One-time setup in
+**Settings → Pages**: set *Source = **GitHub Actions***.
 
 > **URL / basePath note.** This is a *project* site served under
 > `/kavya-pandya-portfolio/`, so `next.config.ts` sets `basePath`. If you rename the repo
