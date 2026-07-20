@@ -5,7 +5,7 @@
 
 export const SITE = {
   name: "Kavya Pandya",
-  role: "Cancer Biology Researcher, Ph.D.",
+  role: "Biotechnology Researcher, Ph.D.",
   location: "Gandhinagar, India",
   // shown under the name in the sidebar
   degree: "Ph.D. Biotechnology",
@@ -29,7 +29,7 @@ export const ABOUT: string[] = [
 ];
 
 export const NEWS: { date: string; text: string }[] = [
-  { date: "2025", text: "Completed my Ph.D. in Cancer Biology at the Institute of Advanced Research, Gandhinagar." },
+  { date: "2025", text: "Completed my Ph.D. in Biotechnology at the Institute of Advanced Research, Gandhinagar." },
   { date: "2025", text: "Review on the DDR–autophagy cross-talk published in the Journal of Biological Chemistry." },
   { date: "2025", text: "Presented work on DDR–autophagy under oxidative stress at the AACR meeting (Cancer Research)." },
   { date: "2024", text: "Review on CRISPR-Cas molecular diagnostics published in Molecular Biotechnology." },
@@ -106,7 +106,7 @@ export const PUBLICATIONS: {
 ];
 
 export const EDUCATION: { degree: string; inst: string; years: string }[] = [
-  { degree: "Ph.D., Cancer Biology", inst: "Institute of Advanced Research, Gandhinagar", years: "2020–2025" },
+  { degree: "Ph.D., Biotechnology", inst: "Institute of Advanced Research, Gandhinagar", years: "2020–2025" },
   { degree: "M.Sc., Biochemistry", inst: "Nirma University", years: "2018–2020" },
   { degree: "B.Sc., Biochemistry", inst: "St. Xavier's College, Ahmedabad", years: "2015–2018" },
 ];
