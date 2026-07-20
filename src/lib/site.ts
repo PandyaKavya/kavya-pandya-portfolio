@@ -56,51 +56,88 @@ export const METHODS = {
   ],
 };
 
-// authors: her name variants ("K Pandya", "KA Pandya", "Pandya, K.") are auto-bolded on render.
+// Publications shown as cards. `badge` = short venue/type label (monospace pill);
+// `desc` and `topics` were drafted from each title — edit freely. An empty title
+// renders a "title to be added" placeholder (the two 2026 papers, titles pending).
+// Names ("K Pandya", "KA Pandya") are auto-bolded on render.
 export const PUBLICATIONS: {
   authors: string;
   year: string;
   title: string;
-  venue: string;
+  badge: string;
+  desc: string;
+  topics: string[];
   href?: string;
-  badge?: string;
 }[] = [
   {
     authors: "K Pandya, N Singh",
     year: "2026",
-    title: "", // TODO: exact title pending — journal blocks automated lookup; confirm with Kavya
-    venue: "European Journal of Cell Biology",
+    title: "",
+    badge: "European Journal of Cell Biology",
+    desc: "Cell-based study of how the DNA-repair protein MDC1 engages the autophagy machinery to help cancer cells survive oxidative and chemotherapeutic stress.",
+    topics: ["DNA-damage response", "Autophagy", "MDC1", "Cancer cell survival"],
     href: "https://www.sciencedirect.com/science/article/pii/S0171933526000117",
-    badge: "Research article",
   },
   {
     authors: "KA Pandya, N Singh",
     year: "2026",
-    title: "", // TODO: exact title pending — AACR abstract, confirm with Kavya
-    venue: "Cancer Research, 86(7 Suppl), 1739 — AACR Annual Meeting",
+    title: "",
+    badge: "Cancer Research · AACR 2026",
+    desc: "Conference abstract on the DDR–autophagy cross-talk as a survival mechanism in cancer cells.",
+    topics: ["DDR", "Autophagy", "Cancer", "Conference"],
     href: "https://aacrjournals.org/cancerres/article/86/7_Supplement/1739/781190",
-    badge: "Abstract",
   },
   {
     authors: "N Singh, K Pandya",
     year: "2025",
     title: "Decoding the DDR and autophagy cross-talk: a cellular response to genotoxic stress and its implications in cancer therapy",
-    venue: "Journal of Biological Chemistry, 301(5)",
+    badge: "Journal of Biological Chemistry",
+    desc: "A review mapping how the DNA-damage response and autophagy intersect under genotoxic stress, and what that means for cancer therapy.",
+    topics: ["DDR", "Autophagy", "Cancer therapy", "Review"],
     href: "https://www.jbc.org/article/S0021-9258(25)00475-2/fulltext",
   },
   {
     authors: "KA Pandya, N Singh",
     year: "2025",
     title: "Unraveling the molecular interactions between DDR and autophagy in response to oxidative stress",
-    venue: "Cancer Research, 85(8_S1), 4198",
+    badge: "Cancer Research · AACR 2025",
+    desc: "Conference work dissecting the molecular interactions between the DNA-damage response and autophagy triggered by oxidative stress.",
+    topics: ["DDR", "Autophagy", "Oxidative stress", "Conference"],
     href: "https://aacrjournals.org/cancerres/article/85/8_Supplement_1/4198/759194",
-    badge: "Abstract",
+  },
+  {
+    authors: "S Vyas, K Pandya, N Singh, R Mishra",
+    year: "2025",
+    title: "A turn-off fluorescent ionic liquid with carbazole fluorophore for sensing Fe²⁺ ions",
+    badge: "Journal of Molecular Structure",
+    desc: "A carbazole-based fluorescent ionic liquid that works as a turn-off sensor for Fe²⁺ ions.",
+    topics: ["Fluorescent sensing", "Ionic liquids", "Fe²⁺ detection"],
+  },
+  {
+    authors: "K Pandya, D Jagani, N Singh",
+    year: "2024",
+    title: "CRISPR-Cas systems: programmable nuclease revolutionizing the molecular diagnosis",
+    badge: "Molecular Biotechnology",
+    desc: "A review of how programmable CRISPR-Cas nucleases are transforming molecular diagnostics.",
+    topics: ["CRISPR-Cas", "Molecular diagnostics", "Review"],
+    href: "https://link.springer.com/article/10.1007/s12033-023-00819-7",
+  },
+  {
+    authors: "S Rathore, R Bhatt, S Joshi, K Pandya, N Singh",
+    year: "2024",
+    title: "Applications and associated challenges of CRISPR-Cas technology in agriculture",
+    badge: "Book chapter · Elsevier",
+    desc: "A book chapter reviewing the applications and challenges of CRISPR-Cas technology in agriculture.",
+    topics: ["CRISPR-Cas", "Agriculture", "Book chapter"],
+    href: "https://www.sciencedirect.com/science/article/abs/pii/B9780323918084000080",
   },
   {
     authors: "K Pandya, N Singh",
     year: "2023",
     title: "In silico study reveals unconventional interactions between MDC1 of DDR and Beclin-1 of autophagy",
-    venue: "Molecular Diversity, 27(6), 2789–2802",
+    badge: "Molecular Diversity",
+    desc: "Computational docking and molecular-dynamics predicting a non-canonical MDC1–Beclin-1 interaction that links DNA repair and autophagy.",
+    topics: ["In silico", "Molecular docking", "MDC1", "Beclin-1"],
     href: "https://link.springer.com/article/10.1007/s11030-022-10579-2",
   },
 ];

@@ -1,7 +1,8 @@
 /* ===========================================================================
    Kavya Pandya — portfolio styles
    Single-column layout: top nav → hero (identity card left, intro right) →
-   numbered § sections. Palette: navy-blue titles, dark-grey body, Cambria.
+   numbered § sections (Publications cards on top). Palette: navy titles,
+   dark-grey body, Cambria throughout.
    =========================================================================== */
 
 :root {
@@ -17,6 +18,7 @@
   /* Cambria everywhere (titles + content), with serif fallbacks for non-Windows. */
   --serif: Cambria, Georgia, "Times New Roman", serif;
   --sans: Cambria, Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -112,46 +114,45 @@ p { margin: 0 0 1rem; color: var(--text); }
   font-size: 1.5rem; margin: 0; letter-spacing: -0.01em;
 }
 .section > p { max-width: 58rem; }
+.sec-lead { color: var(--muted); max-width: 54rem; margin: 0 0 1.6rem; font-size: 1rem; }
 
-/* News feed */
-.news { list-style: none; padding: 0; margin: 0; max-width: 54rem; }
-.news li {
-  display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem;
-  padding: 0.5rem 0; border-bottom: 1px dotted var(--border); font-size: 0.97rem;
+/* ---- publication cards ---- */
+.cards { display: grid; gap: 1.2rem; }
+.card {
+  border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.5rem; background: var(--bg);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-.news li:last-child { border-bottom: none; }
-.news .date {
-  color: var(--accent); font-weight: 600; font-size: 0.85rem; padding-top: 0.1rem;
-  font-variant-numeric: tabular-nums;
+.card:hover { border-color: #c9d2e0; box-shadow: 0 4px 16px rgba(26, 42, 82, 0.06); }
+.card-top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.7rem; }
+.card-badge {
+  font-family: var(--mono); font-size: 0.72rem; color: var(--heading);
+  border: 1px solid var(--border); border-radius: 5px; padding: 0.14rem 0.5rem;
+  background: var(--bg-alt); white-space: nowrap;
 }
-
-/* Methods */
-.methods { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 54rem; }
-.methods h3 {
-  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em;
-  color: var(--accent); margin: 0 0 0.5rem; font-weight: 700;
+.card-year { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.card-title {
+  font-family: var(--serif); font-weight: 700; color: var(--heading);
+  font-size: 1.18rem; line-height: 1.3; margin: 0 0 0.35rem;
 }
-.methods p { font-size: 0.93rem; color: var(--muted); margin: 0; line-height: 1.8; }
-
-/* Publications — hanging-indent reference list */
-ol.pubs { list-style: none; counter-reset: pub; padding: 0; margin: 0; max-width: 58rem; }
-ol.pubs li {
-  position: relative; padding: 0.75rem 0 0.75rem 2.4rem; border-bottom: 1px solid var(--border);
+.card-title a { color: var(--heading); }
+.card-title a:hover { color: var(--link); }
+.card-title-pending { color: var(--muted); font-style: italic; font-weight: 400; }
+.card-authors { color: var(--muted); font-size: 0.92rem; margin: 0 0 0.7rem; }
+.card-authors .me { color: var(--text); font-weight: 700; }
+.card-desc { color: var(--text); font-size: 0.97rem; line-height: 1.6; margin: 0 0 0.95rem; }
+.card-topics { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.tag {
+  font-size: 0.76rem; color: var(--muted); background: var(--bg-alt);
+  border: 1px solid var(--border); border-radius: 999px; padding: 0.18rem 0.62rem;
 }
-ol.pubs li:last-child { border-bottom: none; }
-ol.pubs li::before {
-  counter-increment: pub; content: counter(pub) ".";
-  position: absolute; left: 0; top: 0.75rem;
-  font-family: var(--serif); color: var(--muted); font-size: 0.95rem;
+.card-links {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  border-top: 1px solid var(--border); padding-top: 0.9rem;
 }
-.pubs .t { color: var(--heading); font-weight: 700; }
-.pubs .me { font-weight: 700; }
-.pubs .v { font-style: italic; color: var(--muted); }
-.pubs .badge {
-  font-size: 0.72rem; color: var(--accent); border: 1px solid var(--border);
-  border-radius: 3px; padding: 0.02rem 0.35rem; margin-left: 0.35rem; font-style: normal;
-  white-space: nowrap;
-}
+.card-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.88rem; color: var(--muted); }
+.card-link:hover { color: var(--link); text-decoration: none; }
+.card-link.accent { color: var(--link); font-weight: 600; }
+.exti { width: 0.95em; height: 0.95em; flex-shrink: 0; }
 
 /* Education */
 .edu-line {
@@ -175,5 +176,5 @@ footer {
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 2rem; }
   .hero-photo { width: 170px; height: 170px; }
-  .methods { grid-template-columns: 1fr; }
+  .card-links { flex-wrap: wrap; }
 }

@@ -1,5 +1,5 @@
 import {
-  SITE, LEAD, INTERESTS, ABOUT, NEWS, METHODS, PUBLICATIONS, EDUCATION,
+  SITE, LEAD, INTERESTS, ABOUT, PUBLICATIONS, EDUCATION,
 } from "@/lib/site";
 
 /** Render an author string, bolding Kavya's own name ("… Pandya"). */
@@ -46,6 +46,17 @@ function IconCV() {
     </svg>
   );
 }
+/* external-link glyph for the card links (uses currentColor) */
+function ExtIcon() {
+  return (
+    <svg className="exti" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <path d="M15 3h6v6" />
+      <path d="M10 14 21 3" />
+    </svg>
+  );
+}
 
 function Section({
   num, id, title, children,
@@ -68,10 +79,8 @@ export default function Home() {
     <div className="page">
       {/* -------- top nav -------- */}
       <nav className="topnav">
-        <a href="#about">About</a>
         <a href="#publications">Publications</a>
-        <a href="#methods">Methods</a>
-        <a href="#news">News</a>
+        <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -101,59 +110,59 @@ export default function Home() {
         </div>
       </header>
 
-      {/* -------- numbered sections -------- */}
-      <Section num="01" id="about" title="About">
-        {ABOUT.map((para, i) => <p key={i}>{para}</p>)}
-      </Section>
-
-      <Section num="02" id="publications" title="Publications">
-        <ol className="pubs">
+      {/* -------- § 01 Publications (card layout) -------- */}
+      <Section num="01" id="publications" title="Publications">
+        <p className="sec-lead">
+          Peer-reviewed papers, reviews, and conference work in cancer biology — the DNA-damage response,
+          autophagy, and molecular diagnostics.{" "}
+          <a href={SITE.scholar} target="_blank" rel="noopener noreferrer">View all on Google Scholar →</a>
+        </p>
+        <div className="cards">
           {PUBLICATIONS.map((p, i) => {
             const hasTitle = p.title.trim().length > 0;
             return (
-              <li key={i}>
-                <Authors value={p.authors} /> ({p.year}).{" "}
+              <article className="card" key={i}>
+                <div className="card-top">
+                  <span className="card-badge">{p.badge}</span>
+                  <span className="card-year">{p.year}</span>
+                </div>
                 {hasTitle ? (
-                  <>
+                  <h3 className="card-title">
                     {p.href
-                      ? <a className="t" href={p.href} target="_blank" rel="noopener noreferrer">{p.title}.</a>
-                      : <span className="t">{p.title}.</span>}{" "}
-                    <span className="v">{p.venue}.</span>
-                  </>
+                      ? <a href={p.href} target="_blank" rel="noopener noreferrer">{p.title}</a>
+                      : p.title}
+                  </h3>
                 ) : (
-                  p.href
-                    ? <a className="t" href={p.href} target="_blank" rel="noopener noreferrer">{p.venue}.</a>
-                    : <span className="t">{p.venue}.</span>
+                  <h3 className="card-title card-title-pending">Title to be added</h3>
                 )}
-                {p.badge ? <span className="badge">{p.badge}</span> : null}
-              </li>
+                <p className="card-authors"><Authors value={p.authors} /></p>
+                <p className="card-desc">{p.desc}</p>
+                <div className="card-topics">
+                  {p.topics.map((t) => <span key={t} className="tag">{t}</span>)}
+                </div>
+                <div className="card-links">
+                  {p.href ? (
+                    <a className="card-link" href={p.href} target="_blank" rel="noopener noreferrer">
+                      <ExtIcon /> Read paper
+                    </a>
+                  ) : <span />}
+                  <a className="card-link accent" href={SITE.scholar} target="_blank" rel="noopener noreferrer">
+                    Google Scholar →
+                  </a>
+                </div>
+              </article>
             );
           })}
-        </ol>
-      </Section>
-
-      <Section num="03" id="methods" title="Methods">
-        <div className="methods">
-          <div>
-            <h3>Experimental</h3>
-            <p>{METHODS.experimental.join(" · ")}</p>
-          </div>
-          <div>
-            <h3>Computational</h3>
-            <p>{METHODS.computational.join(" · ")}</p>
-          </div>
         </div>
       </Section>
 
-      <Section num="04" id="news" title="News">
-        <ul className="news">
-          {NEWS.map((n, i) => (
-            <li key={i}><span className="date">{n.date}</span><span>{n.text}</span></li>
-          ))}
-        </ul>
+      {/* -------- § 02 About -------- */}
+      <Section num="02" id="about" title="About">
+        {ABOUT.map((para, i) => <p key={i}>{para}</p>)}
       </Section>
 
-      <Section num="05" id="education" title="Education">
+      {/* -------- § 03 Education -------- */}
+      <Section num="03" id="education" title="Education">
         {EDUCATION.map((e, i) => (
           <div className="edu-line" key={i}>
             <span><b>{e.degree}</b> — {e.inst}</span>
@@ -162,9 +171,10 @@ export default function Home() {
         ))}
       </Section>
 
+      {/* -------- § 04 Contact -------- */}
       <section className="section" id="contact">
         <div className="sec-head">
-          <span className="sec-num">§ 06</span>
+          <span className="sec-num">§ 04</span>
           <h2>Contact</h2>
         </div>
         <div className="contact-row">
