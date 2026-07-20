@@ -7,16 +7,17 @@
 
 :root {
   --bg: #ffffff;
-  --bg-alt: #f7f9fc;
-  --text: #1a1d24;
-  --heading: #101828;
-  --muted: #4b5563;
-  --border: #e5e7eb;
-  --link: #0f6e8c;         /* teal-blue */
-  --link-hover: #0a5064;
-  --accent: #8a2a33;       /* garnet — the single accent */
-  --serif: var(--font-serif), Georgia, "Times New Roman", serif;
-  --sans: var(--font-sans), "Inter", system-ui, sans-serif;
+  --bg-alt: #f5f7fa;
+  --text: #3f4652;         /* dark grey — all body content */
+  --heading: #1a2a52;      /* navy blue — all titles */
+  --muted: #5b6473;        /* lighter grey — secondary text */
+  --border: #e2e6ec;
+  --link: #26406b;         /* navy — links */
+  --link-hover: #1a2a52;
+  --accent: #26406b;       /* navy — dates, labels, icons */
+  /* Cambria everywhere (titles + content), with serif fallbacks for non-Windows. */
+  --serif: Cambria, Georgia, "Times New Roman", serif;
+  --sans: Cambria, Georgia, "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
@@ -65,13 +66,13 @@ img { max-width: 100%; display: block; }
 .main { min-width: 0; }
 .lead {
   font-family: var(--serif); font-size: 1.4rem; line-height: 1.5; font-weight: 400;
-  color: var(--heading); margin: 0.2rem 0 2.6rem;
+  color: var(--text); margin: 0.2rem 0 2.6rem;
 }
 .lead em { font-style: italic; color: var(--accent); }
 
 section { margin-bottom: 2.8rem; scroll-margin-top: 2rem; }
 h2 {
-  font-family: var(--serif); font-weight: 600; font-size: 1.35rem; color: var(--heading);
+  font-family: var(--serif); font-weight: 700; font-size: 1.35rem; color: var(--heading);
   margin: 0 0 1.1rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--border);
 }
 p { margin: 0 0 1rem; color: var(--text); }
@@ -93,14 +94,14 @@ p { margin: 0 0 1rem; color: var(--text); }
 .research { list-style: none; padding: 0; margin: 0; }
 .research li { padding: 0.55rem 0; border-bottom: 1px solid var(--border); }
 .research li:last-child { border-bottom: none; }
-.research b { color: var(--heading); font-weight: 600; }
+.research b { color: var(--heading); font-weight: 700; }
 .research span { color: var(--muted); }
 
 /* Methods */
 .methods { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .methods h3 {
   font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em;
-  color: var(--accent); margin: 0 0 0.5rem; font-weight: 600;
+  color: var(--accent); margin: 0 0 0.5rem; font-weight: 700;
 }
 .methods p { font-size: 0.93rem; color: var(--muted); margin: 0; line-height: 1.8; }
 
@@ -115,7 +116,7 @@ ol.pubs li::before {
   position: absolute; left: 0; top: 0.75rem;
   font-family: var(--serif); color: var(--muted); font-size: 0.95rem;
 }
-.pubs .t { color: var(--heading); font-weight: 600; }
+.pubs .t { color: var(--heading); font-weight: 700; }
 .pubs .me { font-weight: 700; }
 .pubs .v { font-style: italic; color: var(--muted); }
 .pubs .badge {

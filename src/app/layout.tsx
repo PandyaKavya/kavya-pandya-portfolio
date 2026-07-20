@@ -1,22 +1,6 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/site";
-
-const sourceSerif = Source_Serif_4({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const ibmPlexSans = IBM_Plex_Sans({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Kavya Pandya — Cancer Biology Researcher",
@@ -48,7 +32,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${sourceSerif.variable} ${ibmPlexSans.variable}`}>
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
