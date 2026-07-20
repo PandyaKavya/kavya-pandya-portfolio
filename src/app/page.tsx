@@ -25,15 +25,15 @@ export default function Home() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className="photo" src={SITE.photo} alt={SITE.name} />
         <p className="name">{SITE.name}</p>
-        <p className="role">
-          Ph.D., Cancer Biology
-          <br />
-          {SITE.sidebarRole}
-        </p>
+        <p className="degree">{SITE.degree}</p>
+        <div className="expertise">
+          <span className="lbl">Expertise</span>
+          <span className="val">{SITE.expertise}</span>
+        </div>
         <ul className="side-links">
-          <li><span className="ico">✉</span><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
           <li><span className="ico">◈</span><a href={SITE.scholar}>Google Scholar</a></li>
           <li><span className="ico">in</span><a href={SITE.linkedin}>LinkedIn</a></li>
+          <li><span className="ico">✉</span><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
           <li><span className="ico">⬇</span><a href={SITE.cv}>Curriculum vitae</a></li>
         </ul>
       </aside>

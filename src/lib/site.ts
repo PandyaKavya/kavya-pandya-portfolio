@@ -7,8 +7,9 @@ export const SITE = {
   name: "Kavya Pandya",
   role: "Cancer Biology Researcher, Ph.D.",
   location: "Gandhinagar, India",
-  // one-line tagline under the name in the sidebar
-  sidebarRole: "Molecular & computational biology",
+  // shown under the name in the sidebar
+  degree: "Ph.D. Biotechnology",
+  expertise: "Cell and Molecular Biology",
   url: "https://pandyakavya.github.io/kavya-pandya-portfolio/",
   email: "kavyaadi98@gmail.com",
   scholar: "https://scholar.google.com/citations?user=cR6thnUAAAAJ&hl=en",
