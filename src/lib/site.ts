@@ -10,6 +10,7 @@ export const SITE = {
   // shown under the name in the sidebar
   degree: "Ph.D. Biotechnology",
   expertise: "Cell and Molecular Biology",
+  institute: "Institute of Advanced Research, India",
   url: "https://pandyakavya.github.io/kavya-pandya-portfolio/",
   email: "kavyaadi98@gmail.com",
   scholar: "https://scholar.google.com/citations?user=cR6thnUAAAAJ&hl=en",
@@ -19,13 +20,23 @@ export const SITE = {
   googleVerification: "vR0MHUqGDsFvNBkYnX5muEopmvKabsrcthb-7WDj6nI",
 };
 
-// Lead sentence at the top of the content column (supports <em> via markup in page)
+// Intro shown in the hero (right column)
 export const LEAD =
-  "I study how cells survive genotoxic stress — the DNA-damage response and autophagy — working at the bench and on the screen, and now bridging into computational, data-driven biology.";
+  "Hi, I'm Kavya! I explore how cancer cells rewire their signaling and DNA repair pathways to survive chemotherapy, and how these adaptations can be exposed as therapeutic vulnerabilities. Let's connect and talk about cancer biology, treatment resistance, and new strategies for more effective therapies.";
+
+// Research-interest chips shown under the intro
+export const INTERESTS: string[] = [
+  "Genome stability",
+  "Autophagy",
+  "Cellular stress response",
+  "PROTACs",
+  "Synthetic vulnerabilities in cancer",
+  "Functional genomics & gene regulation",
+];
 
 export const ABOUT: string[] = [
-  "I'm a molecular cancer biologist (Ph.D., 2025). My doctoral work asked how the DNA-damage-response protein MDC1 plays a non-canonical role in DNA repair through its interactions with the autophagy machinery — combining wet-lab experiments with structural and in-silico analysis.",
-  "My methods span both worlds: western blotting, co-immunoprecipitation, immunocytochemistry, flow cytometry and cell-based assays alongside molecular docking, molecular-dynamics simulation, and an interest in CRISPR-based diagnostics. I'm now moving toward computational and quantitative biology.",
+  "I'm a molecular cancer biologist with a Ph.D. in Biotechnology. My doctoral research explored how MDC1, a key DNA-repair protein, interacts with the autophagy machinery to help cancer cells survive oxidative and chemotherapeutic stress. By combining cell-based experiments with structural and computational analyses, I uncovered a non-canonical link between DNA repair and autophagy.",
+  "Understanding this connection is important because cancer cells often evade treatment by adapting their stress-response pathways. My goal is to identify these survival mechanisms and uncover vulnerabilities that could lead to more effective therapies. I am now expanding my work toward computational and quantitative biology.",
 ];
 
 export const NEWS: { date: string; text: string }[] = [
@@ -33,13 +44,6 @@ export const NEWS: { date: string; text: string }[] = [
   { date: "2025", text: "Review on the DDR–autophagy cross-talk published in the Journal of Biological Chemistry." },
   { date: "2025", text: "Presented work on DDR–autophagy under oxidative stress at the AACR meeting (Cancer Research)." },
   { date: "2024", text: "Review on CRISPR-Cas molecular diagnostics published in Molecular Biotechnology." },
-];
-
-export const RESEARCH: { title: string; desc: string }[] = [
-  { title: "DNA-damage response", desc: "MDC1 and the cellular response to genotoxic stress." },
-  { title: "DDR–autophagy cross-talk", desc: "How the two pathways intersect under oxidative and drug-induced stress." },
-  { title: "Structural & computational biology", desc: "Docking and molecular-dynamics of the MDC1–Beclin-1 interaction." },
-  { title: "CRISPR-Cas diagnostics", desc: "Programmable nucleases for molecular diagnosis." },
 ];
 
 export const METHODS = {
@@ -62,12 +66,35 @@ export const PUBLICATIONS: {
   badge?: string;
 }[] = [
   {
-    authors: "K Pandya, D Jagani, N Singh",
-    year: "2024",
-    title: "CRISPR-Cas systems: programmable nuclease revolutionizing the molecular diagnosis",
-    venue: "Molecular Biotechnology, 66(8), 1739–1753",
-    href: "https://link.springer.com/article/10.1007/s12033-023-00819-7",
-    badge: "12 citations",
+    authors: "K Pandya, N Singh",
+    year: "2026",
+    title: "", // TODO: exact title pending — journal blocks automated lookup; confirm with Kavya
+    venue: "European Journal of Cell Biology",
+    href: "https://www.sciencedirect.com/science/article/pii/S0171933526000117",
+    badge: "Research article",
+  },
+  {
+    authors: "KA Pandya, N Singh",
+    year: "2026",
+    title: "", // TODO: exact title pending — AACR abstract, confirm with Kavya
+    venue: "Cancer Research, 86(7 Suppl), 1739 — AACR Annual Meeting",
+    href: "https://aacrjournals.org/cancerres/article/86/7_Supplement/1739/781190",
+    badge: "Abstract",
+  },
+  {
+    authors: "N Singh, K Pandya",
+    year: "2025",
+    title: "Decoding the DDR and autophagy cross-talk: a cellular response to genotoxic stress and its implications in cancer therapy",
+    venue: "Journal of Biological Chemistry, 301(5)",
+    href: "https://www.jbc.org/article/S0021-9258(25)00475-2/fulltext",
+  },
+  {
+    authors: "KA Pandya, N Singh",
+    year: "2025",
+    title: "Unraveling the molecular interactions between DDR and autophagy in response to oxidative stress",
+    venue: "Cancer Research, 85(8_S1), 4198",
+    href: "https://aacrjournals.org/cancerres/article/85/8_Supplement_1/4198/759194",
+    badge: "Abstract",
   },
   {
     authors: "K Pandya, N Singh",
@@ -75,33 +102,6 @@ export const PUBLICATIONS: {
     title: "In silico study reveals unconventional interactions between MDC1 of DDR and Beclin-1 of autophagy",
     venue: "Molecular Diversity, 27(6), 2789–2802",
     href: "https://link.springer.com/article/10.1007/s11030-022-10579-2",
-  },
-  {
-    authors: "N Singh, K Pandya",
-    year: "2025",
-    title: "Decoding the DDR and autophagy cross-talk: a cellular response to genotoxic stress and its implications in cancer therapy",
-    venue: "Journal of Biological Chemistry, 301(5)",
-  },
-  {
-    authors: "KA Pandya, N Singh",
-    year: "2025",
-    title: "Unraveling the molecular interactions between DDR and autophagy in response to oxidative stress",
-    venue: "Cancer Research, 85(8_S1), 4198",
-    badge: "Conference",
-  },
-  {
-    authors: "S Vyas, K Pandya, N Singh, R Mishra",
-    year: "2025",
-    title: "A turn-off fluorescent ionic liquid with carbazole fluorophore for sensing Fe²⁺ ions",
-    venue: "Journal of Molecular Structure, 142732",
-  },
-  {
-    authors: "S Rathore, R Bhatt, S Joshi, K Pandya, N Singh",
-    year: "2024",
-    title: "Applications and associated challenges of CRISPR-Cas technology in agriculture",
-    venue: "CRISPR-Cas System in Translational Biotechnology, 265–280",
-    href: "https://www.sciencedirect.com/science/article/abs/pii/B9780323918084000080",
-    badge: "Book chapter",
   },
 ];
 

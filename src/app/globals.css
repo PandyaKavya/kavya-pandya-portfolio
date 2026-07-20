@@ -1,8 +1,7 @@
 /* ===========================================================================
    Kavya Pandya — portfolio styles
-   Single-column layout (top nav → hero → numbered § sections) inspired by
-   parththaker.github.io, rendered in Kavya's palette: navy-blue titles,
-   dark-grey body, Cambria throughout.
+   Single-column layout: top nav → hero (identity card left, intro right) →
+   numbered § sections. Palette: navy-blue titles, dark-grey body, Cambria.
    =========================================================================== */
 
 :root {
@@ -50,39 +49,28 @@ p { margin: 0 0 1rem; color: var(--text); }
 .topnav a { color: var(--muted); }
 .topnav a:hover { color: var(--link); text-decoration: none; }
 
-/* ---- hero: text left, photo right ---- */
+/* ---- hero: identity card (left) + intro (right) ---- */
 .hero {
-  display: grid; grid-template-columns: 1fr 260px; gap: 3rem;
+  display: grid; grid-template-columns: 280px 1fr; gap: 3.5rem;
   align-items: start; margin-bottom: 0.5rem;
 }
-.hero-text { min-width: 0; }
-.eyebrow {
-  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.11em;
-  font-weight: 700; color: var(--accent); margin: 0 0 1rem;
-}
-.hero h1 {
-  font-family: var(--serif); font-weight: 700; color: var(--heading);
-  font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.05;
-  letter-spacing: -0.015em; margin: 0;
-}
-.hero-sub { font-size: 1rem; color: var(--muted); margin: 0.7rem 0 0; }
-.hero .intro {
-  font-size: 1.3rem; line-height: 1.5; color: var(--text);
-  margin: 1.5rem 0 0; max-width: 40rem;
-}
-.hero .bio { margin: 1.3rem 0 0; max-width: 40rem; }
-.hero .bio p { color: var(--text); font-size: 1rem; line-height: 1.7; margin: 0 0 0.85rem; }
-.hero .bio p:last-child { margin-bottom: 0; }
 
-/* profile photo (circular, top-right) */
-.hero-media { justify-self: end; }
+/* identity card */
+.idcard { min-width: 0; }
 .hero-photo {
-  width: 240px; height: 240px; border-radius: 50%; object-fit: cover;
+  width: 210px; height: 210px; border-radius: 50%; object-fit: cover;
   border: 1px solid var(--border); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+  margin-bottom: 1.3rem;
 }
+.id-name {
+  font-family: var(--serif); font-weight: 700; color: var(--heading);
+  font-size: 1.75rem; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 0.4rem;
+}
+.id-degree { color: var(--text); font-weight: 600; font-size: 1rem; margin: 0 0 0.15rem; }
+.id-inst { color: var(--muted); font-size: 0.92rem; line-height: 1.4; margin: 0 0 1.3rem; }
 
-/* ---- link logo badges (navy fill, white glyph) ---- */
-.logos { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.7rem; }
+/* link logo badges (navy fill, white glyph) */
+.logos { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0; }
 .logo {
   width: 42px; height: 42px; border-radius: 9px; background: var(--heading);
   display: grid; place-items: center;
@@ -90,6 +78,24 @@ p { margin: 0 0 1rem; color: var(--text); }
 }
 .logo:hover { background: var(--link); transform: translateY(-2px); text-decoration: none; }
 .logo svg { width: 21px; height: 21px; fill: #fff; display: block; }
+
+/* hero right: intro + interest chips + CTA */
+.hero-text { min-width: 0; }
+.hero-text .intro {
+  font-size: 1.32rem; line-height: 1.55; color: var(--text); margin: 0; max-width: 42rem;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; }
+.chip {
+  border: 1px solid var(--border); border-radius: 6px; padding: 0.34rem 0.72rem;
+  font-size: 0.85rem; color: var(--heading); background: var(--bg-alt);
+}
+.btn-research {
+  display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 1.7rem;
+  background: var(--heading); color: #fff; font-weight: 700; font-size: 0.98rem;
+  padding: 0.62rem 1.2rem; border-radius: 8px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn-research:hover { background: var(--link); color: #fff; text-decoration: none; transform: translateY(-1px); }
 
 /* ---- numbered sections ---- */
 .section { padding: 0.2rem 0; }
@@ -105,6 +111,7 @@ p { margin: 0 0 1rem; color: var(--text); }
   font-family: var(--serif); font-weight: 700; color: var(--heading);
   font-size: 1.5rem; margin: 0; letter-spacing: -0.01em;
 }
+.section > p { max-width: 58rem; }
 
 /* News feed */
 .news { list-style: none; padding: 0; margin: 0; max-width: 54rem; }
@@ -117,13 +124,6 @@ p { margin: 0 0 1rem; color: var(--text); }
   color: var(--accent); font-weight: 600; font-size: 0.85rem; padding-top: 0.1rem;
   font-variant-numeric: tabular-nums;
 }
-
-/* Research list */
-.research { list-style: none; padding: 0; margin: 0; max-width: 54rem; }
-.research li { padding: 0.55rem 0; border-bottom: 1px solid var(--border); }
-.research li:last-child { border-bottom: none; }
-.research b { color: var(--heading); font-weight: 700; }
-.research span { color: var(--muted); }
 
 /* Methods */
 .methods { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 54rem; }
@@ -173,9 +173,7 @@ footer {
 
 /* ---- responsive ---- */
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; gap: 1.8rem; }
-  .hero-media { order: -1; justify-self: start; }
+  .hero { grid-template-columns: 1fr; gap: 2rem; }
   .hero-photo { width: 170px; height: 170px; }
-  .hero h1 { font-size: clamp(2.1rem, 9vw, 2.8rem); }
   .methods { grid-template-columns: 1fr; }
 }

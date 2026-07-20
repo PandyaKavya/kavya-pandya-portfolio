@@ -1,5 +1,5 @@
 import {
-  SITE, LEAD, ABOUT, NEWS, RESEARCH, METHODS, PUBLICATIONS, EDUCATION,
+  SITE, LEAD, INTERESTS, ABOUT, NEWS, METHODS, PUBLICATIONS, EDUCATION,
 } from "@/lib/site";
 
 /** Render an author string, bolding Kavya's own name ("… Pandya"). */
@@ -68,52 +68,68 @@ export default function Home() {
     <div className="page">
       {/* -------- top nav -------- */}
       <nav className="topnav">
-        <a href="#news">News</a>
-        <a href="#research">Research</a>
-        <a href="#methods">Methods</a>
+        <a href="#about">About</a>
         <a href="#publications">Publications</a>
+        <a href="#methods">Methods</a>
+        <a href="#news">News</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      {/* -------- hero -------- */}
+      {/* -------- hero: identity card (left) + intro (right) -------- */}
       <header className="hero">
-        <div className="hero-text">
-          <p className="eyebrow">{SITE.degree} · {SITE.location}</p>
-          <h1>{SITE.name}</h1>
-          <p className="hero-sub">Expertise in {SITE.expertise}</p>
-          <p className="intro">{LEAD}</p>
-          <div className="bio">
-            {ABOUT.map((para, i) => <p key={i}>{para}</p>)}
-          </div>
+        <aside className="idcard">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="hero-photo" src={SITE.photo} alt={SITE.name} />
+          <h1 className="id-name">{SITE.name}</h1>
+          <p className="id-degree">{SITE.degree}</p>
+          <p className="id-inst">{SITE.institute}</p>
           <div className="logos">
             <a className="logo" href={SITE.scholar} target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><IconScholar /></a>
             <a className="logo" href={SITE.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><IconLinkedIn /></a>
             <a className="logo" href={`mailto:${SITE.email}`} aria-label="Email"><IconMail /></a>
             <a className="logo" href={SITE.cv} target="_blank" rel="noopener noreferrer" aria-label="Curriculum vitae"><IconCV /></a>
           </div>
-        </div>
-        <div className="hero-media">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="hero-photo" src={SITE.photo} alt={SITE.name} />
+        </aside>
+
+        <div className="hero-text">
+          <p className="intro">{LEAD}</p>
+          <div className="chips">
+            {INTERESTS.map((t) => <span key={t} className="chip">{t}</span>)}
+          </div>
+          <a className="btn-research" href="#publications">View research <span aria-hidden="true">→</span></a>
         </div>
       </header>
 
       {/* -------- numbered sections -------- */}
-      <Section num="01" id="news" title="News">
-        <ul className="news">
-          {NEWS.map((n, i) => (
-            <li key={i}><span className="date">{n.date}</span><span>{n.text}</span></li>
-          ))}
-        </ul>
+      <Section num="01" id="about" title="About">
+        {ABOUT.map((para, i) => <p key={i}>{para}</p>)}
       </Section>
 
-      <Section num="02" id="research" title="Research">
-        <ul className="research">
-          {RESEARCH.map((r, i) => (
-            <li key={i}><b>{r.title}.</b> <span>{r.desc}</span></li>
-          ))}
-        </ul>
+      <Section num="02" id="publications" title="Publications">
+        <ol className="pubs">
+          {PUBLICATIONS.map((p, i) => {
+            const hasTitle = p.title.trim().length > 0;
+            return (
+              <li key={i}>
+                <Authors value={p.authors} /> ({p.year}).{" "}
+                {hasTitle ? (
+                  <>
+                    {p.href
+                      ? <a className="t" href={p.href} target="_blank" rel="noopener noreferrer">{p.title}.</a>
+                      : <span className="t">{p.title}.</span>}{" "}
+                    <span className="v">{p.venue}.</span>
+                  </>
+                ) : (
+                  p.href
+                    ? <a className="t" href={p.href} target="_blank" rel="noopener noreferrer">{p.venue}.</a>
+                    : <span className="t">{p.venue}.</span>
+                )}
+                {p.badge ? <span className="badge">{p.badge}</span> : null}
+              </li>
+            );
+          })}
+        </ol>
       </Section>
 
       <Section num="03" id="methods" title="Methods">
@@ -129,19 +145,12 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section num="04" id="publications" title="Publications">
-        <ol className="pubs">
-          {PUBLICATIONS.map((p, i) => (
-            <li key={i}>
-              <Authors value={p.authors} /> ({p.year}).{" "}
-              {p.href
-                ? <a className="t" href={p.href} target="_blank" rel="noopener noreferrer">{p.title}.</a>
-                : <span className="t">{p.title}.</span>}{" "}
-              <span className="v">{p.venue}.</span>
-              {p.badge ? <span className="badge">{p.badge}</span> : null}
-            </li>
+      <Section num="04" id="news" title="News">
+        <ul className="news">
+          {NEWS.map((n, i) => (
+            <li key={i}><span className="date">{n.date}</span><span>{n.text}</span></li>
           ))}
-        </ol>
+        </ul>
       </Section>
 
       <Section num="05" id="education" title="Education">
