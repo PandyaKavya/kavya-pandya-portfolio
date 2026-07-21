@@ -58,6 +58,38 @@ function ExtIcon() {
   );
 }
 
+function PubCard({ p }: { p: (typeof PUBLICATIONS)[number] }) {
+  const hasTitle = p.title.trim().length > 0;
+  return (
+    <article className="card">
+      <div className="card-top">
+        <span className="card-badge">{p.badge}</span>
+        <span className="card-year">{p.year}</span>
+      </div>
+      {hasTitle ? (
+        <h3 className="card-title">
+          {p.href
+            ? <a href={p.href} target="_blank" rel="noopener noreferrer">{p.title}</a>
+            : p.title}
+        </h3>
+      ) : (
+        <h3 className="card-title card-title-pending">Title to be added</h3>
+      )}
+      <p className="card-authors"><Authors value={p.authors} /></p>
+      <div className="card-links">
+        {p.href ? (
+          <a className="card-link" href={p.href} target="_blank" rel="noopener noreferrer">
+            <ExtIcon /> Read paper
+          </a>
+        ) : <span />}
+        <a className="card-link accent" href={SITE.scholar} target="_blank" rel="noopener noreferrer">
+          Google Scholar →
+        </a>
+      </div>
+    </article>
+  );
+}
+
 function Section({
   num, id, title, children,
 }: {
@@ -75,11 +107,14 @@ function Section({
 }
 
 export default function Home() {
+  const research = PUBLICATIONS.filter((p) => p.research);
+
   return (
     <div className="page">
       {/* -------- top nav -------- */}
       <nav className="topnav">
         <a href="#publications">Publications</a>
+        <a href="#research">Research</a>
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -106,63 +141,39 @@ export default function Home() {
           <div className="chips">
             {INTERESTS.map((t) => <span key={t} className="chip">{t}</span>)}
           </div>
-          <a className="btn-research" href="#publications">View research <span aria-hidden="true">→</span></a>
+          <a className="btn-research" href="#research">View research <span aria-hidden="true">→</span></a>
         </div>
       </header>
 
-      {/* -------- § 01 Publications (card layout) -------- */}
+      {/* -------- § 01 Publications (everything) -------- */}
       <Section num="01" id="publications" title="Publications">
         <p className="sec-lead">
-          Peer-reviewed papers, reviews, and conference work in cancer biology — the DNA-damage response,
-          autophagy, and molecular diagnostics.{" "}
+          Every peer-reviewed paper, review, conference abstract, and collaboration.{" "}
           <a href={SITE.scholar} target="_blank" rel="noopener noreferrer">View all on Google Scholar →</a>
         </p>
         <div className="cards">
-          {PUBLICATIONS.map((p, i) => {
-            const hasTitle = p.title.trim().length > 0;
-            return (
-              <article className="card" key={i}>
-                <div className="card-top">
-                  <span className="card-badge">{p.badge}</span>
-                  <span className="card-year">{p.year}</span>
-                </div>
-                {hasTitle ? (
-                  <h3 className="card-title">
-                    {p.href
-                      ? <a href={p.href} target="_blank" rel="noopener noreferrer">{p.title}</a>
-                      : p.title}
-                  </h3>
-                ) : (
-                  <h3 className="card-title card-title-pending">Title to be added</h3>
-                )}
-                <p className="card-authors"><Authors value={p.authors} /></p>
-                <p className="card-desc">{p.desc}</p>
-                <div className="card-topics">
-                  {p.topics.map((t) => <span key={t} className="tag">{t}</span>)}
-                </div>
-                <div className="card-links">
-                  {p.href ? (
-                    <a className="card-link" href={p.href} target="_blank" rel="noopener noreferrer">
-                      <ExtIcon /> Read paper
-                    </a>
-                  ) : <span />}
-                  <a className="card-link accent" href={SITE.scholar} target="_blank" rel="noopener noreferrer">
-                    Google Scholar →
-                  </a>
-                </div>
-              </article>
-            );
-          })}
+          {PUBLICATIONS.map((p, i) => <PubCard key={i} p={p} />)}
         </div>
       </Section>
 
-      {/* -------- § 02 About -------- */}
-      <Section num="02" id="about" title="About">
+      {/* -------- § 02 Research (own doctoral study only) -------- */}
+      <Section num="02" id="research" title="Research">
+        <p className="sec-lead">
+          Papers from my own doctoral research — the direction of my work on the DNA-damage response,
+          autophagy, and cancer-cell survival.
+        </p>
+        <div className="cards">
+          {research.map((p, i) => <PubCard key={i} p={p} />)}
+        </div>
+      </Section>
+
+      {/* -------- § 03 About -------- */}
+      <Section num="03" id="about" title="About">
         {ABOUT.map((para, i) => <p key={i}>{para}</p>)}
       </Section>
 
-      {/* -------- § 03 Education -------- */}
-      <Section num="03" id="education" title="Education">
+      {/* -------- § 04 Education -------- */}
+      <Section num="04" id="education" title="Education">
         {EDUCATION.map((e, i) => (
           <div className="edu-line" key={i}>
             <span><b>{e.degree}</b> — {e.inst}</span>
@@ -171,10 +182,10 @@ export default function Home() {
         ))}
       </Section>
 
-      {/* -------- § 04 Contact -------- */}
+      {/* -------- § 05 Contact -------- */}
       <section className="section" id="contact">
         <div className="sec-head">
-          <span className="sec-num">§ 04</span>
+          <span className="sec-num">§ 05</span>
           <h2>Contact</h2>
         </div>
         <div className="contact-row">

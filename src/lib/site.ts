@@ -39,87 +39,61 @@ export const ABOUT: string[] = [
   "Understanding this connection is important because cancer cells often evade treatment by adapting their stress-response pathways. My goal is to identify these survival mechanisms and uncover vulnerabilities that could lead to more effective therapies. I am now expanding my work toward computational and quantitative biology.",
 ];
 
-export const NEWS: { date: string; text: string }[] = [
-  { date: "2025", text: "Completed my Ph.D. in Biotechnology at the Institute of Advanced Research, Gandhinagar." },
-  { date: "2025", text: "Review on the DDR–autophagy cross-talk published in the Journal of Biological Chemistry." },
-  { date: "2025", text: "Presented work on DDR–autophagy under oxidative stress at the AACR meeting (Cancer Research)." },
-  { date: "2024", text: "Review on CRISPR-Cas molecular diagnostics published in Molecular Biotechnology." },
-];
-
-export const METHODS = {
-  experimental: [
-    "Western blotting", "Immunocytochemistry", "Co-immunoprecipitation", "Flow cytometry",
-    "Cell culture", "qRT-PCR", "SDS-PAGE", "Cell-based assays",
-  ],
-  computational: [
-    "Molecular docking", "Molecular-dynamics simulation", "Protein–protein interaction analysis", "Bioinformatics",
-  ],
-};
-
-// Publications shown as cards. `badge` = short venue/type label (monospace pill);
-// `desc` and `topics` were drafted from each title — edit freely. An empty title
-// renders a "title to be added" placeholder (the two 2026 papers, titles pending).
+// Publications shown as cards. `badge` = short venue/type label (monospace pill).
+// `research: true` marks papers from Kavya's own doctoral study — those appear in
+// the "Research" section; every entry appears in the full "Publications" list.
 // Names ("K Pandya", "KA Pandya") are auto-bolded on render.
 export const PUBLICATIONS: {
   authors: string;
   year: string;
   title: string;
   badge: string;
-  desc: string;
-  topics: string[];
   href?: string;
+  research?: boolean;
 }[] = [
   {
     authors: "K Pandya, N Singh",
     year: "2026",
-    title: "",
+    title: "MDC1 promotes nuclear localization of Beclin-1 and supports its role in ATM pathway in response to oxidative stress",
     badge: "European Journal of Cell Biology",
-    desc: "Cell-based study of how the DNA-repair protein MDC1 engages the autophagy machinery to help cancer cells survive oxidative and chemotherapeutic stress.",
-    topics: ["DNA-damage response", "Autophagy", "MDC1", "Cancer cell survival"],
     href: "https://www.sciencedirect.com/science/article/pii/S0171933526000117",
+    research: true,
   },
   {
     authors: "KA Pandya, N Singh",
     year: "2026",
-    title: "",
+    title: "Abstract 1739: Deciphering the molecular links between DNA damage response and autophagy in cancer: Implications for chemotherapy resistance",
     badge: "Cancer Research · AACR 2026",
-    desc: "Conference abstract on the DDR–autophagy cross-talk as a survival mechanism in cancer cells.",
-    topics: ["DDR", "Autophagy", "Cancer", "Conference"],
     href: "https://aacrjournals.org/cancerres/article/86/7_Supplement/1739/781190",
+    research: true,
   },
   {
     authors: "N Singh, K Pandya",
     year: "2025",
     title: "Decoding the DDR and autophagy cross-talk: a cellular response to genotoxic stress and its implications in cancer therapy",
     badge: "Journal of Biological Chemistry",
-    desc: "A review mapping how the DNA-damage response and autophagy intersect under genotoxic stress, and what that means for cancer therapy.",
-    topics: ["DDR", "Autophagy", "Cancer therapy", "Review"],
     href: "https://www.jbc.org/article/S0021-9258(25)00475-2/fulltext",
+    research: true,
   },
   {
     authors: "KA Pandya, N Singh",
     year: "2025",
     title: "Unraveling the molecular interactions between DDR and autophagy in response to oxidative stress",
     badge: "Cancer Research · AACR 2025",
-    desc: "Conference work dissecting the molecular interactions between the DNA-damage response and autophagy triggered by oxidative stress.",
-    topics: ["DDR", "Autophagy", "Oxidative stress", "Conference"],
     href: "https://aacrjournals.org/cancerres/article/85/8_Supplement_1/4198/759194",
+    research: true,
   },
   {
     authors: "S Vyas, K Pandya, N Singh, R Mishra",
     year: "2025",
     title: "A turn-off fluorescent ionic liquid with carbazole fluorophore for sensing Fe²⁺ ions",
     badge: "Journal of Molecular Structure",
-    desc: "A carbazole-based fluorescent ionic liquid that works as a turn-off sensor for Fe²⁺ ions.",
-    topics: ["Fluorescent sensing", "Ionic liquids", "Fe²⁺ detection"],
   },
   {
     authors: "K Pandya, D Jagani, N Singh",
     year: "2024",
     title: "CRISPR-Cas systems: programmable nuclease revolutionizing the molecular diagnosis",
     badge: "Molecular Biotechnology",
-    desc: "A review of how programmable CRISPR-Cas nucleases are transforming molecular diagnostics.",
-    topics: ["CRISPR-Cas", "Molecular diagnostics", "Review"],
     href: "https://link.springer.com/article/10.1007/s12033-023-00819-7",
   },
   {
@@ -127,8 +101,6 @@ export const PUBLICATIONS: {
     year: "2024",
     title: "Applications and associated challenges of CRISPR-Cas technology in agriculture",
     badge: "Book chapter · Elsevier",
-    desc: "A book chapter reviewing the applications and challenges of CRISPR-Cas technology in agriculture.",
-    topics: ["CRISPR-Cas", "Agriculture", "Book chapter"],
     href: "https://www.sciencedirect.com/science/article/abs/pii/B9780323918084000080",
   },
   {
@@ -136,9 +108,8 @@ export const PUBLICATIONS: {
     year: "2023",
     title: "In silico study reveals unconventional interactions between MDC1 of DDR and Beclin-1 of autophagy",
     badge: "Molecular Diversity",
-    desc: "Computational docking and molecular-dynamics predicting a non-canonical MDC1–Beclin-1 interaction that links DNA repair and autophagy.",
-    topics: ["In silico", "Molecular docking", "MDC1", "Beclin-1"],
     href: "https://link.springer.com/article/10.1007/s11030-022-10579-2",
+    research: true,
   },
 ];
 
