@@ -161,7 +161,7 @@ p { margin: 0 0 1rem; color: var(--text); }
 /* Education */
 .edu-line {
   display: flex; justify-content: space-between; gap: 1rem; max-width: 54rem;
-  padding: 0.45rem 0; border-bottom: 1px dotted var(--border); font-size: 0.97rem;
+  padding: 0.6rem 0; border-bottom: 1px dotted var(--border); font-size: 1.12rem;
 }
 .edu-line:last-child { border-bottom: none; }
 .edu-line b { color: var(--heading); font-weight: 700; }
