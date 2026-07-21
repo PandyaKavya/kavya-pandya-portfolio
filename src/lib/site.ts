@@ -6,7 +6,7 @@
 export const SITE = {
   name: "Kavya Pandya",
   role: "Biotechnology Researcher, Ph.D.",
-  location: "Gandhinagar, India",
+  location: "San Francisco, California",
   // shown under the name in the sidebar
   degree: "Ph.D. Biotechnology",
   expertise: "Cell and Molecular Biology",
