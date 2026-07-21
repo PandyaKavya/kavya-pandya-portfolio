@@ -63,9 +63,9 @@ export default function Home() {
     <div className="page">
       {/* -------- top nav -------- */}
       <nav className="topnav">
+        <a href="#about">About</a>
         <a href="#research">Research</a>
         <Link href="/publications/">Publications</Link>
-        <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -95,8 +95,13 @@ export default function Home() {
         </div>
       </header>
 
-      {/* -------- § 01 Research (own doctoral study) -------- */}
-      <Section num="01" id="research" title="Research" linkHref="/publications/" linkLabel="All publications">
+      {/* -------- § 01 About -------- */}
+      <Section num="01" id="about" title="About">
+        {ABOUT.map((para, i) => <p key={i}>{para}</p>)}
+      </Section>
+
+      {/* -------- § 02 Research (own doctoral study) -------- */}
+      <Section num="02" id="research" title="Research" linkHref="/publications/" linkLabel="All publications">
         <p className="sec-lead">
           Papers from my own doctoral research — the direction of my work on the DNA-damage response,
           autophagy, and cancer-cell survival.
@@ -104,11 +109,6 @@ export default function Home() {
         <div className="cards">
           {research.map((p, i) => <PubCard key={i} p={p} />)}
         </div>
-      </Section>
-
-      {/* -------- § 02 About -------- */}
-      <Section num="02" id="about" title="About">
-        {ABOUT.map((para, i) => <p key={i}>{para}</p>)}
       </Section>
 
       {/* -------- § 03 Education -------- */}

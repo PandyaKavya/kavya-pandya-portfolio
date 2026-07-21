@@ -22,7 +22,7 @@ export const SITE = {
 
 // Intro shown in the hero (right column)
 export const LEAD =
-  "Hi, I'm Kavya! I explore how cancer cells rewire their signaling and DNA repair pathways to survive chemotherapy, and how these adaptations can be exposed as therapeutic vulnerabilities. Let's connect and talk about cancer biology, treatment resistance, and new strategies for more effective therapies.";
+  "Hi, I'm Kavya! I study how cancer cells rewire signaling pathways to survive chemotherapy, with the goal of uncovering new therapeutic vulnerabilities. If this interests you, let's connect.";
 
 // Research-interest chips shown under the intro
 export const INTERESTS: string[] = [
@@ -36,7 +36,7 @@ export const INTERESTS: string[] = [
 
 export const ABOUT: string[] = [
   "I'm a molecular cancer biologist with a Ph.D. in Biotechnology. My doctoral research explored how MDC1, a key DNA-repair protein, interacts with the autophagy machinery to help cancer cells survive oxidative and chemotherapeutic stress. By combining cell-based experiments with structural and computational analyses, I uncovered a non-canonical link between DNA repair and autophagy.",
-  "Understanding this connection is important because cancer cells often evade treatment by adapting their stress-response pathways. My goal is to identify these survival mechanisms and uncover vulnerabilities that could lead to more effective therapies. I am now expanding my work toward computational and quantitative biology.",
+  "Understanding this connection is important because cancer cells often evade treatment by adapting their stress-response pathways. My goal is to identify these survival mechanisms and uncover vulnerabilities that could lead to more effective therapies.",
 ];
 
 // Publications shown as cards. `badge` = short venue/type label (monospace pill).
@@ -60,7 +60,7 @@ export const PUBLICATIONS: {
     research: true,
   },
   {
-    authors: "KA Pandya, N Singh",
+    authors: "K Pandya, N Singh",
     year: "2026",
     title: "Abstract 1739: Deciphering the molecular links between DNA damage response and autophagy in cancer: Implications for chemotherapy resistance",
     badge: "Cancer Research · AACR 2026",
@@ -76,7 +76,7 @@ export const PUBLICATIONS: {
     research: true,
   },
   {
-    authors: "KA Pandya, N Singh",
+    authors: "K Pandya, N Singh",
     year: "2025",
     title: "Unraveling the molecular interactions between DDR and autophagy in response to oxidative stress",
     badge: "Cancer Research · AACR 2025",
