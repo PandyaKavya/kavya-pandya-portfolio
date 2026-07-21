@@ -111,14 +111,22 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* -------- § 03 Education -------- */}
+      {/* -------- § 03 Education (timeline) -------- */}
       <Section num="03" id="education" title="Education">
-        {EDUCATION.map((e, i) => (
-          <div className="edu-line" key={i}>
-            <span><b>{e.degree}</b> — {e.inst}</span>
-            <span className="r">{e.years}</span>
-          </div>
-        ))}
+        <div className="timeline">
+          <ol className="tl-list">
+            {EDUCATION.map((e, i) => (
+              <li className="tl-item" key={i}>
+                <span className={`tl-node${e.current ? " now" : ""}`} />
+                <div className="tl-body">
+                  <div className={`tl-year${e.current ? " now" : ""}`}>{e.grad}</div>
+                  <div className="tl-org">{e.inst}</div>
+                  <div className="tl-role">{e.degree}</div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </Section>
 
       {/* -------- § 04 Contact -------- */}

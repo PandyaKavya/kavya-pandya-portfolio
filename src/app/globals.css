@@ -158,14 +158,44 @@ p { margin: 0 0 1rem; color: var(--text); }
 .card-link.accent { color: var(--link); font-weight: 600; }
 .exti { width: 0.95em; height: 0.95em; flex-shrink: 0; }
 
-/* Education */
-.edu-line {
-  display: flex; justify-content: space-between; gap: 1rem; max-width: 54rem;
-  padding: 0.6rem 0; border-bottom: 1px dotted var(--border); font-size: 1.12rem;
+/* Education — horizontal timeline */
+.timeline { position: relative; margin-top: 0.7rem; }
+.timeline::before {            /* horizontal rail through the nodes (desktop) */
+  content: ""; position: absolute; left: 5px; right: 5px; top: 6px; height: 1px; background: var(--border);
 }
-.edu-line:last-child { border-bottom: none; }
-.edu-line b { color: var(--heading); font-weight: 700; }
-.edu-line .r { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tl-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 1.4rem;
+}
+.tl-item { position: relative; min-width: 0; }
+.tl-body { min-width: 0; }
+.tl-node {
+  display: block; width: 11px; height: 11px; border-radius: 2px; background: var(--muted);
+  box-shadow: 0 0 0 4px var(--bg);      /* ring "breaks" the rail at each node */
+  margin-bottom: 1.15rem;
+}
+.tl-node.now { background: var(--accent); }
+.tl-year {
+  font-family: var(--mono); font-size: 0.82rem; color: var(--muted);
+  font-variant-numeric: tabular-nums; letter-spacing: 0.02em;
+}
+.tl-year.now { color: var(--accent); font-weight: 700; }
+.tl-org {
+  font-family: var(--serif); font-weight: 700; color: var(--heading);
+  font-size: 1.14rem; line-height: 1.25; margin-top: 0.4rem;
+}
+.tl-role { color: var(--muted); font-size: 1rem; margin-top: 0.15rem; }
+
+@media (max-width: 640px) {
+  .timeline::before { display: none; }
+  .timeline::after {            /* vertical spine (mobile) */
+    content: ""; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: var(--border);
+  }
+  .tl-list { grid-auto-flow: row; grid-template-columns: 1fr; gap: 1.6rem; }
+  .tl-item { display: flex; gap: 1.1rem; align-items: flex-start; }
+  .tl-node { margin-bottom: 0; margin-top: 0.3rem; }
+  .tl-org { margin-top: 0; }
+}
 
 /* Contact */
 .contact-row { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 1rem; }

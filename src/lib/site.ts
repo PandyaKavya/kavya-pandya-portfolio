@@ -114,8 +114,9 @@ export const PUBLICATIONS: {
   },
 ];
 
-export const EDUCATION: { degree: string; inst: string; years: string }[] = [
-  { degree: "Ph.D., Biotechnology", inst: "Institute of Advanced Research, Gandhinagar", years: "2020–2025" },
-  { degree: "M.Sc., Biochemistry", inst: "Nirma University", years: "2018–2020" },
-  { degree: "B.Sc., Biochemistry", inst: "St. Xavier's College, Ahmedabad", years: "2015–2018" },
+// Shown as a horizontal timeline (oldest → newest); `grad` is the graduation year.
+export const EDUCATION: { inst: string; degree: string; grad: string; current?: boolean }[] = [
+  { inst: "St. Xavier's College", degree: "B.Sc., Biochemistry", grad: "2018" },
+  { inst: "Nirma University", degree: "M.Sc., Biochemistry", grad: "2020" },
+  { inst: "Institute of Advanced Research", degree: "Ph.D., Biotechnology", grad: "2026", current: true },
 ];
