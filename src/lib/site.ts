@@ -88,6 +88,7 @@ export const PUBLICATIONS: {
     year: "2025",
     title: "A turn-off fluorescent ionic liquid with carbazole fluorophore for sensing Fe²⁺ ions",
     badge: "Journal of Molecular Structure",
+    href: "https://doi.org/10.1016/j.molstruc.2025.142732",
   },
   {
     authors: "K Pandya, D Jagani, N Singh",
