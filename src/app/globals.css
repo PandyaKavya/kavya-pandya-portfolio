@@ -102,8 +102,18 @@ p { margin: 0 0 1rem; color: var(--text); }
 /* ---- numbered sections ---- */
 .section { padding: 0.2rem 0; }
 .sec-head {
-  display: flex; align-items: baseline; gap: 1rem;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
   border-top: 1px solid var(--border); padding-top: 1.7rem; margin: 2.4rem 0 1.4rem;
+}
+.sec-head-main { display: flex; align-items: baseline; gap: 1rem; min-width: 0; }
+.sec-link { font-size: 0.9rem; font-weight: 600; color: var(--link); white-space: nowrap; }
+.sec-link:hover { text-decoration: underline; }
+
+/* page header (Publications page) */
+.page-head { margin: 0.5rem 0 2rem; }
+.page-head h1 {
+  font-family: var(--serif); font-weight: 700; color: var(--heading);
+  font-size: clamp(2rem, 4vw, 2.6rem); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 0.7rem;
 }
 .sec-num {
   font-family: var(--serif); color: var(--accent); font-weight: 700;

@@ -1,21 +1,8 @@
+import Link from "next/link";
 import {
   SITE, LEAD, INTERESTS, ABOUT, PUBLICATIONS, EDUCATION,
 } from "@/lib/site";
-
-/** Render an author string, bolding Kavya's own name ("… Pandya"). */
-function Authors({ value }: { value: string }) {
-  const parts = value.split(", ");
-  return (
-    <>
-      {parts.map((a, i) => (
-        <span key={i}>
-          {a.includes("Pandya") ? <span className="me">{a}</span> : a}
-          {i < parts.length - 1 ? ", " : ""}
-        </span>
-      ))}
-    </>
-  );
-}
+import { PubCard } from "@/components/PubCard";
 
 /* --- inline link logos: white glyphs that sit inside the navy badges --- */
 function IconScholar() {
@@ -46,60 +33,23 @@ function IconCV() {
     </svg>
   );
 }
-/* external-link glyph for the card links (uses currentColor) */
-function ExtIcon() {
-  return (
-    <svg className="exti" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-      strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-      <path d="M15 3h6v6" />
-      <path d="M10 14 21 3" />
-    </svg>
-  );
-}
-
-function PubCard({ p }: { p: (typeof PUBLICATIONS)[number] }) {
-  const hasTitle = p.title.trim().length > 0;
-  return (
-    <article className="card">
-      <div className="card-top">
-        <span className="card-badge">{p.badge}</span>
-        <span className="card-year">{p.year}</span>
-      </div>
-      {hasTitle ? (
-        <h3 className="card-title">
-          {p.href
-            ? <a href={p.href} target="_blank" rel="noopener noreferrer">{p.title}</a>
-            : p.title}
-        </h3>
-      ) : (
-        <h3 className="card-title card-title-pending">Title to be added</h3>
-      )}
-      <p className="card-authors"><Authors value={p.authors} /></p>
-      <div className="card-links">
-        {p.href ? (
-          <a className="card-link" href={p.href} target="_blank" rel="noopener noreferrer">
-            <ExtIcon /> Read paper
-          </a>
-        ) : <span />}
-        <a className="card-link accent" href={SITE.scholar} target="_blank" rel="noopener noreferrer">
-          Google Scholar →
-        </a>
-      </div>
-    </article>
-  );
-}
 
 function Section({
-  num, id, title, children,
+  num, id, title, linkHref, linkLabel, children,
 }: {
-  num: string; id: string; title: string; children: React.ReactNode;
+  num: string; id: string; title: string;
+  linkHref?: string; linkLabel?: string; children: React.ReactNode;
 }) {
   return (
     <section className="section" id={id}>
       <div className="sec-head">
-        <span className="sec-num">§ {num}</span>
-        <h2>{title}</h2>
+        <div className="sec-head-main">
+          <span className="sec-num">§ {num}</span>
+          <h2>{title}</h2>
+        </div>
+        {linkHref && linkLabel ? (
+          <Link href={linkHref} className="sec-link">{linkLabel} →</Link>
+        ) : null}
       </div>
       {children}
     </section>
@@ -113,8 +63,8 @@ export default function Home() {
     <div className="page">
       {/* -------- top nav -------- */}
       <nav className="topnav">
-        <a href="#publications">Publications</a>
         <a href="#research">Research</a>
+        <Link href="/publications/">Publications</Link>
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -145,19 +95,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* -------- § 01 Publications (everything) -------- */}
-      <Section num="01" id="publications" title="Publications">
-        <p className="sec-lead">
-          Every peer-reviewed paper, review, conference abstract, and collaboration.{" "}
-          <a href={SITE.scholar} target="_blank" rel="noopener noreferrer">View all on Google Scholar →</a>
-        </p>
-        <div className="cards">
-          {PUBLICATIONS.map((p, i) => <PubCard key={i} p={p} />)}
-        </div>
-      </Section>
-
-      {/* -------- § 02 Research (own doctoral study only) -------- */}
-      <Section num="02" id="research" title="Research">
+      {/* -------- § 01 Research (own doctoral study) -------- */}
+      <Section num="01" id="research" title="Research" linkHref="/publications/" linkLabel="All publications">
         <p className="sec-lead">
           Papers from my own doctoral research — the direction of my work on the DNA-damage response,
           autophagy, and cancer-cell survival.
@@ -167,13 +106,13 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* -------- § 03 About -------- */}
-      <Section num="03" id="about" title="About">
+      {/* -------- § 02 About -------- */}
+      <Section num="02" id="about" title="About">
         {ABOUT.map((para, i) => <p key={i}>{para}</p>)}
       </Section>
 
-      {/* -------- § 04 Education -------- */}
-      <Section num="04" id="education" title="Education">
+      {/* -------- § 03 Education -------- */}
+      <Section num="03" id="education" title="Education">
         {EDUCATION.map((e, i) => (
           <div className="edu-line" key={i}>
             <span><b>{e.degree}</b> — {e.inst}</span>
@@ -182,11 +121,13 @@ export default function Home() {
         ))}
       </Section>
 
-      {/* -------- § 05 Contact -------- */}
+      {/* -------- § 04 Contact -------- */}
       <section className="section" id="contact">
         <div className="sec-head">
-          <span className="sec-num">§ 05</span>
-          <h2>Contact</h2>
+          <div className="sec-head-main">
+            <span className="sec-num">§ 04</span>
+            <h2>Contact</h2>
+          </div>
         </div>
         <div className="contact-row">
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
