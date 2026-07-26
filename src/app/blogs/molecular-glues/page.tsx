@@ -146,7 +146,7 @@ export default function MolecularGlues() {
           proximity. Along with this precise positioning, the target protein must also contain an
           accessible lysine residue, which is required for the ubiquitin-transfer machinery to attach
           ubiquitin and initiate its destruction. This means that a molecular glue can successfully
-          assemble the complex and can still fail to trigger efficient protein destruction.
+          assemble the complex and can still fail to trigger efficient protein degradation.
         </p>
 
         <p>
