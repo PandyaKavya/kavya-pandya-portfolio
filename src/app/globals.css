@@ -244,6 +244,19 @@ p { margin: 0 0 1rem; color: var(--text); }
 }
 .article-back { display: inline-block; margin-top: 2.5rem; font-weight: 600; }
 
+/* right-floated figure inside an article */
+.fig-right { float: right; width: 300px; max-width: 44%; margin: 0.3rem 0 1rem 1.6rem; }
+.fig-right img {
+  width: 100%; height: auto; display: block; background: #fff;
+  border: 1px solid var(--border); border-radius: 10px;
+}
+.fig-right figcaption {
+  font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; text-align: center; line-height: 1.4;
+}
+@media (max-width: 640px) {
+  .fig-right { float: none; width: 100%; max-width: 100%; margin: 0.5rem auto 1.5rem; }
+}
+
 /* Contact */
 .contact-row { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 1rem; }
 

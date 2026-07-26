@@ -26,6 +26,12 @@ export default function MolecularGlues() {
           Molecular Glues: The Tiny Matchmakers Rewriting the Rules of Drug Discovery
         </h1>
 
+        <figure className="fig-right">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="../../molecular-glue.gif" alt="A molecular glue bringing Protein A and Protein B together" />
+          <figcaption>A molecular glue bridging two proteins, creating a new interaction surface.</figcaption>
+        </figure>
+
         <p>
           Inside every cell, thousands of proteins move, collide and interact. Some repair DNA, others
           carry signals, and many work only when they meet the right partner. Since their dysregulation
