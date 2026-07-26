@@ -114,6 +114,11 @@ export const PUBLICATIONS: {
   },
 ];
 
+// Blog posts (newest first). Add entries here — they render on the /blogs/ page.
+export const BLOGS: { title: string; date: string; summary?: string; href?: string }[] = [
+  // { title: "Post title", date: "2026", summary: "One-line summary.", href: "https://…" },
+];
+
 // Shown as a horizontal timeline (oldest → newest); `grad` is the graduation year.
 export const EDUCATION: { inst: string; degree: string; grad: string; current?: boolean }[] = [
   { inst: "St. Xavier's College", degree: "B.Sc., Biochemistry", grad: "2018" },

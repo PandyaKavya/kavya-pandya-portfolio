@@ -17,6 +17,7 @@ export default function Publications() {
       <nav className="topnav">
         <Link href="/">← Kavya Pandya</Link>
         <Link href="/#research">Research</Link>
+        <Link href="/blogs/">Blogs</Link>
         <Link href="/#about">About</Link>
         <Link href="/#contact">Contact</Link>
       </nav>

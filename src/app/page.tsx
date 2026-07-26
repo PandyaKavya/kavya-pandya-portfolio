@@ -65,6 +65,7 @@ export default function Home() {
       <nav className="topnav">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <Link href="/blogs/">Blogs</Link>
         <Link href="/publications/">Publications</Link>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
