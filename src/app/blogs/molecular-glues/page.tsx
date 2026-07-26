@@ -130,8 +130,11 @@ export default function MolecularGlues() {
 
         <p>
           Recent research is trying to transform molecular-glue discovery from a largely serendipitous
-          process into a more systematic one. Scientists are also exploring new E3 ligases to expand
-          their use across tissues and diseases. Beyond degradation, molecular glues are being developed
+          process into a more systematic one. Scientists are combining cell-based screening, proteomics,
+          CRISPR-based genetic screens, structural biology and computational modelling to identify
+          compounds that create useful protein interactions. The field is also moving beyond the
+          best-known E3 ligases by exploring new ligases that could expand the use of molecular glues
+          across different tissues and diseases. Beyond degradation, molecular glues are being developed
           to stabilize beneficial interactions, restore mutation-disrupted complexes and alter protein
           assembly.
         </p>
