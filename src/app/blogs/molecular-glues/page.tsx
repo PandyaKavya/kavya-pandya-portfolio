@@ -92,7 +92,7 @@ export default function MolecularGlues() {
           Natural products provide another chapter. Rapamycin, originally isolated from bacteria, is well
           known inhibitor of mTOR, a major promoter of cell growth and metabolism. On binding with
           FKBP12, mTOR gets recruited to its surface and inhibits it signaling. In this case, the glue
-          doesn&rsquo;t destroy the protein, perhaps, it creates an inhibitory alliance. This shows
+          doesn&rsquo;t destroy the protein, instead, it creates an inhibitory alliance. This shows
           another side of the molecular glue, where not each one of them are degraders.
         </p>
 
