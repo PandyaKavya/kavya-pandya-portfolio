@@ -115,8 +115,15 @@ export const PUBLICATIONS: {
 ];
 
 // Blog posts (newest first). Add entries here — they render on the /blogs/ page.
+// href starting with "/" links to an internal post page; otherwise it opens externally.
 export const BLOGS: { title: string; date: string; summary?: string; href?: string }[] = [
-  // { title: "Post title", date: "2026", summary: "One-line summary.", href: "https://…" },
+  {
+    title: "Molecular Glues: The Tiny Matchmakers Rewriting the Rules of Drug Discovery",
+    date: "July 2026",
+    summary:
+      "How a tiny molecule can bring two proteins together — reshaping drug discovery from blocking proteins to rewiring their interactions.",
+    href: "/blogs/molecular-glues/",
+  },
 ];
 
 // Shown as a horizontal timeline (oldest → newest); `grad` is the graduation year.

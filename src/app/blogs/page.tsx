@@ -38,7 +38,9 @@ export default function Blogs() {
               <div className="post-body">
                 <h2 className="post-title">
                   {b.href
-                    ? <a href={b.href} target="_blank" rel="noopener noreferrer">{b.title}</a>
+                    ? (b.href.startsWith("/")
+                        ? <Link href={b.href}>{b.title}</Link>
+                        : <a href={b.href} target="_blank" rel="noopener noreferrer">{b.title}</a>)
                     : b.title}
                 </h2>
                 {b.summary ? <p className="post-summary">{b.summary}</p> : null}
