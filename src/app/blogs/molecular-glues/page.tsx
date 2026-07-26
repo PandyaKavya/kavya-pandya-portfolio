@@ -35,7 +35,7 @@ export default function MolecularGlues() {
         <p>
           Inside every cell, thousands of proteins move, collide and interact. Some repair DNA, others
           carry signals, and many work only when they meet the right partner. Since their dysregulation
-          is often associated with diseases, protein or their interactions are a major focus of drug
+          is often associated with diseases, proteins or their interactions are a major focus of drug
           discovery. For decades, drug discovery treated proteins mostly as individual machines: find a
           pocket, place a drug inside it and block the machine. The concept of &ldquo;Molecular
           glues&rdquo; offers a different possibility. Instead of blocking one protein on its own, they
@@ -46,7 +46,7 @@ export default function MolecularGlues() {
         <p>
           A molecular glue is a small, usually single-part molecule that promotes or stabilizes an
           interaction between proteins. It may strengthen a weak natural interaction or create an
-          entirely new one. This results into a three-member complex containing two proteins and the
+          entirely new one. This results in a three-member complex containing two proteins and the
           glue. Hence, this provides new avenues for drug designing, where a drug can be targeted to the
           new surface created when all three partners assemble, rather than just designing it to occupy
           an enzyme&rsquo;s active site. Based on the function, molecular glues can be classified into
@@ -89,9 +89,9 @@ export default function MolecularGlues() {
         </p>
 
         <p>
-          Natural products provide another chapter. Rapamycin, originally isolated from bacteria, is well
-          known inhibitor of mTOR, a major promoter of cell growth and metabolism. On binding with
-          FKBP12, mTOR gets recruited to its surface and inhibits it signaling. In this case, the glue
+          Natural products provide another chapter. Rapamycin, originally isolated from bacteria, is a
+          well-known inhibitor of mTOR, a major promoter of cell growth and metabolism. On binding with
+          FKBP12, mTOR gets recruited to its surface and inhibits its signaling. In this case, the glue
           doesn&rsquo;t destroy the protein, instead, it creates an inhibitory alliance. This shows
           another side of the molecular glue, where not each one of them are degraders.
         </p>
@@ -99,9 +99,9 @@ export default function MolecularGlues() {
         <p>
           Out of all, the most therapeutically exciting glues may be molecular-glue degraders. As the
           name suggests, they direct the target proteins for degradation by redirecting cell&rsquo;s
-          ubiquitin-proteasome system. It functions by bringing a diseases-related protein in close
+          ubiquitin-proteasome system. It functions by bringing a disease-related protein in close
           proximity of E3 ubiquitin ligase, which then tags the protein with ubiquitin, flagging it for
-          degradation by proteasome. The glue does not destroy the protein directly, but it arranges the
+          degradation by the proteasome. The glue does not destroy the protein directly, but it arranges the
           encounter; the cell performs the elimination. The recruited protein becomes a
           &ldquo;neosubstrate,&rdquo; one the ligase would not normally recognize. The story of
           lenalidomide shows why this mechanism became so important and has gained the attention of
@@ -121,7 +121,7 @@ export default function MolecularGlues() {
         <p>
           What makes this concept especially significant, in my view, is that it changes the traditional
           approach in drug discovery. Instead of just trying to find a way to block a protein, researchers
-          can now ask &ldquo;can a new interaction change a proteins fate?&rdquo; This broadens the
+          can now ask &ldquo;can a new interaction change a protein&rsquo;s fate?&rdquo; This broadens the
           horizon, where a harmful protein might be destroyed, an overactive pathway restrained, or a
           weakened protective complex restored. This approach may open the door to targeting proteins that
           have long been considered extremely difficult to drug, including transcription factors,
