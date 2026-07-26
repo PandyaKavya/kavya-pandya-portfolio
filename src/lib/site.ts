@@ -121,7 +121,7 @@ export const BLOGS: { title: string; date: string; summary?: string; href?: stri
     title: "Molecular Glues: The Tiny Matchmakers Rewriting the Rules of Drug Discovery",
     date: "July 2026",
     summary:
-      "How a tiny molecule can bring two proteins together — reshaping drug discovery from blocking proteins to rewiring their interactions.",
+      "Curious about molecular glues? Read on to discover what they are, how they work, and why they are creating new possibilities in drug discovery.",
     href: "/blogs/molecular-glues/",
   },
 ];
