@@ -24,8 +24,9 @@ export default function Blogs() {
       <header className="page-head">
         <h1>Blogs</h1>
         <p className="sec-lead">
-          Notes and essays on cancer biology — the DNA-damage response and autophagy — and on bridging
-          wet-lab science with data.
+          I write about emerging ideas in cell biology, with a focus on the molecular mechanisms that
+          shape cellular behavior and treatment response. Have a topic you would like me to explore?{" "}
+          <a href={`mailto:${SITE.email}`}>Feel free to reach out</a> and suggest it.
         </p>
       </header>
 
