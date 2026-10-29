@@ -118,18 +118,18 @@ export const PUBLICATIONS: {
 // href starting with "/" links to an internal post page; otherwise it opens externally.
 export const BLOGS: { title: string; date: string; summary?: string; href?: string }[] = [
   {
-    title: "From Blocking Proteins to Rewiring Their Interactions",
-    date: "September 2026",
-    summary:
-      "What if a medicine could create a new protein partnership instead of blocking one? A look at how drug discovery moved from targeting single proteins to rewiring their interactions.",
-    href: "/blogs/rewiring-protein-interactions/",
-  },
-  {
     title: "Molecular Glues: The Tiny Matchmakers Rewriting the Rules of Drug Discovery",
-    date: "July 2026",
+    date: "September 2026",
     summary:
       "Curious about molecular glues? Read on to discover what they are, how they work, and why they are creating new possibilities in drug discovery.",
     href: "/blogs/molecular-glues/",
+  },
+  {
+    title: "From Blocking Proteins to Rewiring Their Interactions",
+    date: "August 2026",
+    summary:
+      "What if a medicine could create a new protein partnership instead of blocking one? A look at how drug discovery moved from targeting single proteins to rewiring their interactions.",
+    href: "/blogs/rewiring-protein-interactions/",
   },
 ];
 

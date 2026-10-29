@@ -21,7 +21,7 @@ export default function RewiringProteinInteractions() {
       </nav>
 
       <article className="article">
-        <p className="article-meta">Blog · September 2026</p>
+        <p className="article-meta">Blog · August 2026</p>
         <h1 className="article-title">
           From Blocking Proteins to Rewiring Their Interactions
         </h1>

@@ -21,7 +21,7 @@ export default function MolecularGlues() {
       </nav>
 
       <article className="article">
-        <p className="article-meta">Blog · July 2026</p>
+        <p className="article-meta">Blog · September 2026</p>
         <h1 className="article-title">
           Molecular Glues: The Tiny Matchmakers Rewriting the Rules of Drug Discovery
         </h1>
