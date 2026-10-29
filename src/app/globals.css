@@ -258,6 +258,16 @@ p { margin: 0 0 1rem; color: var(--text); }
   .fig-right { float: none; width: 100%; max-width: 100%; margin: 0.5rem auto 1.5rem; }
 }
 
+/* full-width figure inside an article (sits between the title and the first paragraph) */
+.fig-wide { width: 100%; margin: 0 0 1.6rem; }
+.fig-wide img {
+  width: 100%; height: auto; display: block; background: #fff;
+  border: 1px solid var(--border); border-radius: 10px;
+}
+.fig-wide figcaption {
+  font-size: 0.82rem; color: var(--muted); margin-top: 0.5rem; text-align: center; line-height: 1.4;
+}
+
 /* Contact */
 .contact-row { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 1rem; }
 

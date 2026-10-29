@@ -26,7 +26,7 @@ export default function RewiringProteinInteractions() {
           From Blocking Proteins to Rewiring Their Interactions
         </h1>
 
-        <figure className="fig-right">
+        <figure className="fig-wide">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="../../rewiring-interactions.gif"
